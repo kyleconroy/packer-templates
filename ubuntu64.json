@@ -6,7 +6,7 @@
   "iso_md5": "af5f788aee1b32c4b2634734309cc9e9",
   "http_directory": "preseed",
   "ssh_username": "vagrant",
-  "ssh_password": "insecure",
+  "ssh_password": "vagrant",
   "boot_wait":"10s",
   "boot_command": [
   "<esc><esc><enter><wait>",
@@ -23,10 +23,10 @@
 }],
   "provisioners": [{
     "type": "shell",
-    "execute_command": "echo 'insecure' | sudo -S sh '{{ .Path }}'",
+    "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'",
     "inline": [
       "sudo apt-get update -y",
-      "sudo apt-get install -y redis-server"
+      "sudo apt-get clean"
     ]
   }]
 }
